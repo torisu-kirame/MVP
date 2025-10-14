@@ -1,0 +1,33 @@
+[
+  {
+    "index": 0,
+    "timestamp": 1760366481,
+    "transactions": [],
+    "prev_hash": "0",
+    "hash": "e7971aae68dcedb6646371455eb26ba55675a37626cb6e969fe8418fc1de41a8",
+    "nonce": 0,
+    "difficulty": 3
+  },
+  {
+    "index": 1,
+    "timestamp": 1760428354,
+    "transactions": [
+      {
+        "txid": "",
+        "from": "Alice",
+        "to": "Bob",
+        "amount": 10
+      },
+      {
+        "txid": "",
+        "from": "Charlie",
+        "to": "Dave",
+        "amount": 5
+      }
+    ],
+    "prev_hash": "e7971aae68dcedb6646371455eb26ba55675a37626cb6e969fe8418fc1de41a8",
+    "hash": "48bd1f43d646e8bd27a2d8985743013fab37b847400e8b7b190c2e9fa52cf5e6",
+    "nonce": 0,
+    "difficulty": 3
+  }
+]
