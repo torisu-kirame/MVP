@@ -1,66 +1,91 @@
 package service
 
 import (
-	dto "MVP/DTO"
+	"encoding/json"
+	"io/ioutil"
+	"os"
 	"sync"
+
+	dto "MVP/DTO"
 )
 
-// AccountService 管理账户余额
 type AccountService struct {
-	balances map[string]float64
-	mutex    sync.Mutex
+	users map[string]*dto.User
+	file  string
+	mutex sync.Mutex
 }
 
-// NewAccountService 构造函数
-func NewAccountService() *AccountService {
-	return &AccountService{
-		balances: make(map[string]float64),
+// 初始化
+func NewAccountService(file string) *AccountService {
+	s := &AccountService{
+		users: make(map[string]*dto.User),
+		file:  file,
 	}
+	s.loadFromFile()
+	return s
 }
 
-// GetBalance 获取账户余额
+// 获取余额
 func (s *AccountService) GetBalance(address string) float64 {
 	s.mutex.Lock()
 	defer s.mutex.Unlock()
 
-	if bal, ok := s.balances[address]; ok {
-		return bal
+	bytes, err := os.ReadFile(s.file)
+	if err != nil {
+		return 0
 	}
+
+	var users map[string]*dto.User
+	if err := json.Unmarshal(bytes, &users); err != nil {
+		return 0
+	}
+
+	for _, u := range users {
+		if u.Address == address {
+			return u.Balance
+		}
+	}
+
 	return 0
 }
 
-// ApplyTransaction 应用交易，更新账户余额
-func (s *AccountService) ApplyTransaction(tx *dto.Transaction) bool {
+// 获取所有账户
+func (s *AccountService) GetAllBalances() []*dto.User {
 	s.mutex.Lock()
 	defer s.mutex.Unlock()
 
-	// 检查付款方余额
-	if tx.From != "SYSTEM" && s.balances[tx.From] < tx.Amount {
-		return false // 余额不足
+	// 从文件读取
+	bytes, err := os.ReadFile(s.file)
+	if err != nil {
+		return []*dto.User{} // 出错返回空
 	}
 
-	// 扣款
-	if tx.From != "SYSTEM" {
-		s.balances[tx.From] -= tx.Amount
+	var users map[string]*dto.User
+	if err := json.Unmarshal(bytes, &users); err != nil {
+		return []*dto.User{} // 出错返回空
 	}
 
-	// 收款
-	s.balances[tx.To] += tx.Amount
+	list := []*dto.User{}
+	for _, u := range users {
+		list = append(list, u)
+	}
 
-	return true
+	return list
 }
 
-// 获取所有账户余额
-func (s *AccountService) GetAllBalances() []*dto.Account {
-	s.mutex.Lock()
-	defer s.mutex.Unlock()
-
-	var accounts []*dto.Account
-	for addr, bal := range s.balances {
-		accounts = append(accounts, &dto.Account{
-			Address: addr,
-			Balance: bal,
-		})
+// 从 JSON 加载
+func (s *AccountService) loadFromFile() error {
+	if _, err := os.Stat(s.file); os.IsNotExist(err) {
+		return nil
 	}
-	return accounts
+	bytes, err := ioutil.ReadFile(s.file)
+	if err != nil {
+		return err
+	}
+	var data map[string]*dto.User
+	if err := json.Unmarshal(bytes, &data); err != nil {
+		return err
+	}
+	s.users = data
+	return nil
 }

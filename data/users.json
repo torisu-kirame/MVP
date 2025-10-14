@@ -1,0 +1,26 @@
+{
+  "03f4a1bb-be23-4205-ab8c-769dc3172e69": {
+    "id": "03f4a1bb-be23-4205-ab8c-769dc3172e69",
+    "username": "gcd",
+    "address": "ADDR_03f4a1bb",
+    "balance": 110
+  },
+  "18f097cf-301b-48ee-8b3d-83dc30584f06": {
+    "id": "18f097cf-301b-48ee-8b3d-83dc30584f06",
+    "username": "abc",
+    "address": "ADDR_18f097cf",
+    "balance": 90
+  },
+  "9708a346-72e6-4261-844d-8fec80af0e90": {
+    "id": "9708a346-72e6-4261-844d-8fec80af0e90",
+    "username": "alice",
+    "address": "ADDR_9708a346",
+    "balance": 100
+  },
+  "f0027a60-517e-472b-adc0-d7227369cda2": {
+    "id": "f0027a60-517e-472b-adc0-d7227369cda2",
+    "username": "Bob",
+    "address": "ADDR_f0027a60",
+    "balance": 100
+  }
+}

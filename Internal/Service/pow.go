@@ -17,19 +17,27 @@ func NewPowService() *PowService {
 	return &PowService{}
 }
 
-// MineBlock 对给定区块进行 PoW 挖矿
-// 通过不断增加 Nonce 直到哈希前缀满足难度
-func (p *PowService) MineBlock(block *dto.Block) {
-	prefix := strings.Repeat("0", block.Difficulty)
-	for {
-		block.Timestamp = time.Now().Unix()
-		hash := p.calculateHash(block)
-		if strings.HasPrefix(hash, prefix) {
-			block.Hash = hash
-			break
+// MineBlockAsync 异步挖矿
+// 返回一个 channel，可以在外部接收挖矿完成后的区块
+func (p *PowService) MineBlockAsync(block *dto.Block) <-chan *dto.Block {
+	result := make(chan *dto.Block)
+
+	go func() {
+		defer close(result)
+		prefix := strings.Repeat("0", block.Difficulty)
+		for {
+			block.Timestamp = time.Now().Unix()
+			hash := p.calculateHash(block)
+			if strings.HasPrefix(hash, prefix) {
+				block.Hash = hash
+				result <- block
+				break
+			}
+			block.Nonce++
 		}
-		block.Nonce++
-	}
+	}()
+
+	return result
 }
 
 // 验证区块 PoW 是否有效

@@ -1,7 +1,6 @@
 package handler
 
 import (
-	dto "MVP/DTO"
 	service "MVP/Internal/Service"
 
 	"github.com/gofiber/fiber/v2"
@@ -27,23 +26,4 @@ func (h *AccountHandler) GetBalance(c *fiber.Ctx) error {
 func (h *AccountHandler) GetAllBalances(c *fiber.Ctx) error {
 	accounts := h.accountService.GetAllBalances()
 	return c.JSON(accounts)
-}
-
-// POST /accounts/transaction 应用交易
-func (h *AccountHandler) ApplyTransaction(c *fiber.Ctx) error {
-	var tx dto.Transaction
-	if err := c.BodyParser(&tx); err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "无效交易"})
-	}
-
-	if tx.Amount <= 0 || tx.To == "" || tx.From == "" {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "无效字段"})
-	}
-
-	ok := h.accountService.ApplyTransaction(&tx)
-	if !ok {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "余额不足"})
-	}
-
-	return c.JSON(fiber.Map{"message": "交易已应用", "transaction": tx})
 }

@@ -87,6 +87,12 @@ func (bc *BlockchainService) NewBlock(transactions []*dto.Transaction) *dto.Bloc
 	return block
 }
 
+func (bc *BlockchainService) AddBlock(block *dto.Block) {
+	bc.Chain = append(bc.Chain, block)
+	bc.PendingTx = []*dto.Transaction{} // 清空交易池
+	bc.saveToFile()                     // 写入 blockchain.json
+}
+
 // 获取区块链
 func (bc *BlockchainService) GetChain() []*dto.Block {
 	bc.mutex.Lock()

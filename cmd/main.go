@@ -10,23 +10,27 @@ import (
 )
 
 func main() {
+	blockchain_path := "data/blockchain.json"
+	users_data_path := "data/users.json"
+
 	app := fiber.New()
 
 	// 初始化区块链服务
-	const difficulty = 3
-	bc := service.NewBlockchainService("data/blockchain.json", difficulty)
-	powService := service.NewPowService()
-	accountService := service.NewAccountService()
+	const difficulty = 1 // 设置难度
+	bcs := service.NewBlockchainService(blockchain_path, difficulty)
+	pows := service.NewPowService()
+	accounts := service.NewAccountService(users_data_path)
+	userService := service.NewUserService(users_data_path)
 
 	// 初始化路由
-	bcHandler := handler.NewBlockchainHandler(bc)
-	powHandler := handler.NewPowHandler(powService)
-	accountHandler := handler.NewAccountHandler(accountService)
+	bcHandler := handler.NewBlockchainHandler(bcs, pows)
+	accountHandler := handler.NewAccountHandler(accounts)
+	userHandler := handler.NewUserHandler(userService)
 
 	// 注册路由
 	api.BlockHandlerRoutes(app, bcHandler)
-	api.PowRoutes(app, powHandler)
 	api.AccountRoutes(app, accountHandler)
+	api.UserRoutes(app, userHandler)
 
 	// 启动服务
 	log.Println("Blockchain server running on :8080")

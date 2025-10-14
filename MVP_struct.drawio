@@ -1,53 +1,56 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
-  <diagram name="第 1 页" id="gik8d-1OMd53EAZzlIy8">
-    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="第 1 页" id="IVK9_cHgK-OlGTR2J_Lz">
+    <mxGraphModel dx="983" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="CzJj0AqcqkWQ8KgDvb-D-1" target="CzJj0AqcqkWQ8KgDvb-D-4">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-3" target="zvdZLU-Uo_iOsNjxrA1B-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CzJj0AqcqkWQ8KgDvb-D-1" target="CzJj0AqcqkWQ8KgDvb-D-2">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-3" target="zvdZLU-Uo_iOsNjxrA1B-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-1" value="生成交易" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-3" value="生成交易" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="300" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CzJj0AqcqkWQ8KgDvb-D-2" target="CzJj0AqcqkWQ8KgDvb-D-3">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-5" target="zvdZLU-Uo_iOsNjxrA1B-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-2" value="pow挖矿" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="290" y="300" width="120" height="60" as="geometry" />
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-5" value="pow挖矿" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CzJj0AqcqkWQ8KgDvb-D-3" target="CzJj0AqcqkWQ8KgDvb-D-13">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-9" target="zvdZLU-Uo_iOsNjxrA1B-11">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-3" value="验证pow" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="460" y="300" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="CzJj0AqcqkWQ8KgDvb-D-4" target="CzJj0AqcqkWQ8KgDvb-D-5">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-4" value="验证交易" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-9" value="验证交易" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="190" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="CzJj0AqcqkWQ8KgDvb-D-5" target="CzJj0AqcqkWQ8KgDvb-D-2">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-24" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-11" target="zvdZLU-Uo_iOsNjxrA1B-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-5" value="生成区块" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="290" y="190" width="120" height="80" as="geometry" />
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-11" value="生成区块" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="190" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-12" value="查询个人账户" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-12" value="查询个人账户" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="440" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-13" value="应用交易" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-13" value="应用交易" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="630" y="300" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-15" value="查询所有账户" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-14" value="查询所有账户" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="260" y="440" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CzJj0AqcqkWQ8KgDvb-D-17" value="获取区块链" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-15" value="获取区块链" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="420" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-16" target="zvdZLU-Uo_iOsNjxrA1B-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-16" value="验证pow" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zvdZLU-Uo_iOsNjxrA1B-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="zvdZLU-Uo_iOsNjxrA1B-5" target="zvdZLU-Uo_iOsNjxrA1B-16">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
