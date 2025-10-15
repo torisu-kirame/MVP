@@ -22,11 +22,11 @@ func (h *UserHandler) AddUser(c *fiber.Ctx) error {
 	}
 
 	if err := c.BodyParser(&req); err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid request"})
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "无效请求"})
 	}
 
 	if req.Username == "" {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Username is required"})
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "用户名未填写"})
 	}
 
 	user, err := h.userService.AddUser(req.Username, req.Balance)

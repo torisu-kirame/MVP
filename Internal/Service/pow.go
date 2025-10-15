@@ -17,8 +17,7 @@ func NewPowService() *PowService {
 	return &PowService{}
 }
 
-// MineBlockAsync 异步挖矿
-// 返回一个 channel，可以在外部接收挖矿完成后的区块
+// 异步挖矿 返回一个 channel，可以在外部接收挖矿完成后的区块
 func (p *PowService) MineBlockAsync(block *dto.Block) <-chan *dto.Block {
 	result := make(chan *dto.Block)
 

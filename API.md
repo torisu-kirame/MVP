@@ -138,7 +138,7 @@ Base URL: `http://localhost:8080/`
 
 # 获取单个账户余额 `[GET] /api/v1/accounts/:address`
 **描述**：根据地址查询指定账户的余额。
-**请求体**：无
+**请求体**：[:address] 换成指定用户的地址
 **返回示例**：
 ```json
 {

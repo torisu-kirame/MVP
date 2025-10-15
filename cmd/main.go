@@ -33,9 +33,9 @@ func main() {
 	api.UserRoutes(app, userHandler)
 
 	// 启动服务
-	log.Println("Blockchain server running on :8080")
+	log.Println("区块链服务运行于 :http://localhost:8080/")
 	if err := app.Listen(":8080"); err != nil {
-		log.Fatalf("Server failed: %v", err)
+		log.Fatalf("服务器故障: %v", err)
 	}
 
 }

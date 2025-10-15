@@ -35,9 +35,9 @@ func (bc *BlockchainService) ValidateTransactions(txs []*dto.Transaction) []*dto
 	return validTx
 }
 
-// applyTransactionsDirectly 遍历交易，更新 user.json
+// 遍历交易，更新 user.json
 func (h *BlockchainService) ApplyTransactionsDirectly(transactions []*dto.Transaction) error {
-	// 1. 读取用户数据
+	// 读取用户数据
 	bytes, err := os.ReadFile("data/users.json")
 	if err != nil {
 		return err
@@ -55,10 +55,10 @@ func (h *BlockchainService) ApplyTransactionsDirectly(transactions []*dto.Transa
 				return u, nil
 			}
 		}
-		return nil, fmt.Errorf("user not found: %s", address)
+		return nil, fmt.Errorf("找不到用户: %s", address)
 	}
 
-	// 2. 遍历交易应用到用户余额
+	// 遍历交易应用到用户余额
 	for _, tx := range transactions {
 		// 系统奖励交易，不扣款
 		if tx.From != "SYSTEM" {
@@ -67,7 +67,7 @@ func (h *BlockchainService) ApplyTransactionsDirectly(transactions []*dto.Transa
 				return err
 			}
 			if sender.Balance < tx.Amount {
-				return fmt.Errorf("insufficient balance for %s", tx.From)
+				return fmt.Errorf("%s 余额不足", tx.From)
 			}
 			sender.Balance -= tx.Amount
 		}
