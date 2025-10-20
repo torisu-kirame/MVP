@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	blockchain_path := "data/blockchain.json"
 	users_data_path := "data/users.json"
 
